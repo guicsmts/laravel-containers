@@ -41,7 +41,7 @@ RUN rm -rf /etc/nginx/sites-enabled/default
 COPY ./config/nginx/local.mylaravel.com /etc/nginx/sites-available/
 RUN ln -s /etc/nginx/sites-available/local.mylaravel.com /etc/nginx/sites-enabled/
 # configuring basic php.ini
-
+COPY ./config/php-fpm/php.ini /usr/local/etc/php/
 # permissions directory www-data
 RUN chown -R www-data:www-data /root/local.mylaravel.com/
 RUN chmod 0755 /root/local.mylaravel.com/storage/logs/
