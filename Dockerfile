@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     libpng-dev \
     libxpm-dev \
     libfreetype6-dev \
+    default-mysql-server \
     default-mysql-client \
     nginx \
     ntp \
