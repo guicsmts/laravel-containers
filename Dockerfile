@@ -27,7 +27,8 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install -j$(nproc) gd
 # add user to /home/
 #RUN useradd laravel
-WORKDIR /root/
+RUN useradd -m laravel
+WORKDIR /home/laravel/
 # clone repository laravel
 # https://github.com/laravel/laravel
 RUN git clone https://github.com/laravel/laravel
@@ -43,17 +44,22 @@ RUN ln -s /etc/nginx/sites-available/local.mylaravel.com /etc/nginx/sites-enable
 # configuring basic php.ini
 COPY ./config/php-fpm/php.ini /usr/local/etc/php/
 # permissions directory www-data
-RUN chown -R www-data:www-data /root/local.mylaravel.com/
-RUN chmod 0755 /root/local.mylaravel.com/storage/logs/
+RUN chown -R www-data:www-data /home/laravel/local.mylaravel.com/
+RUN chmod -R 755 /home/laravel/local.mylaravel.com/storage/
 # deploy laravel
-WORKDIR /root/local.mylaravel.com/
+WORKDIR /home/laravel/local.mylaravel.com/
 RUN mv .env.example .env
 RUN composer install
 RUN php artisan key:generate
 RUN php artisan config:cache
+RUN php artisan config:clear
 # expose port
 EXPOSE 9000
 EXPOSE 80
+
+# command start
+WORKDIR /home/laravel/local.mylaravel.com/public
+CMD ["php-fpm", "index.php"]
 
 
 
