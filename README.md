@@ -3,7 +3,7 @@ This repository is for those who are learning or starting a new project on Larav
 
  Application | Version 
 |---|---
- Laravel | 7.15
+ Laravel | 7.16.1
  Nginx | 1.14.2
  PHP | 7.4.7
  Maria DB | 10.3.2

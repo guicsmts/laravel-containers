@@ -25,8 +25,7 @@ RUN apt-get update && apt-get install -y \
     python3-dev \     
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd
-# add user to /home/
-#RUN useradd laravel
+#useradd laravel
 RUN useradd -m laravel
 WORKDIR /home/laravel/
 # clone repository laravel
