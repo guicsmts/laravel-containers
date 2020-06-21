@@ -35,7 +35,7 @@ Build to the image from that command:
 
 docker build -f Dockerfile -t id/laravel-containers:1.0 . 
 
->**Importantly**, you need to be in the same directory as the Dockerfile and the dot makes the command.
+*Importantly, you need to be in the same directory as the Dockerfile and the dot makes the command.*
 
 
 
