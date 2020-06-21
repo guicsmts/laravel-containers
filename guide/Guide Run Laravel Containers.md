@@ -1,5 +1,5 @@
 ## Laravel Project Guide
->Run laravel images 
+>Run laravel images. 
 
 COMMAND | ABOUT
 ----- | -----
