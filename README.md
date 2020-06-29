@@ -28,8 +28,9 @@ Check installation Docker, you can execute the command:
 ```
 docker -v
 ````
-```
 For more details you can visit this link:
+
+```
 https://www.docker.com/
 ```
 **Step 3**
