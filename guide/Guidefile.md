@@ -10,28 +10,53 @@ docker | Docker is a container software from the company Docker, Inc, which prov
 >Command docker
 
 #### clone project 
+
+```
 git clone git@github.com:guicsmts/laravel-containers.git
+````
 
 #### build images container
+
+```
 docker build -f Dockerfile -t id/laravel-containers:1.0 .
+````
 
 #### list images containers
+
+```
 docker images 
+````
 
 #### creating container 
+
+```
 docker run -d -it --name laravel -p 80:80 id/laravel-containers:1.0 /bin/bash
+````
 
 #### list container is running 
+
+```
 docker ps 
+````
 
 #### running services nginx and php-fpm
-docker exec id/laravel-containers:1.0 /etc/init.d/nginx start
 
+```
+docker exec id/laravel-containers:1.0 /etc/init.d/nginx start
+````
+
+```
 docker exec id/laravel-containers:1.0 /home/laravel/local.mylaravel.com/public/php-fpm &
+````
 
 #### add the following line to your hosts file
+
+```
 sudo echo '127.0.0.1    local.mylaravel.com' >>/etc/hosts
+```
 
 #### it's working
-http://local.mylaravel.com
 
+```
+http://local.mylaravel.com
+```

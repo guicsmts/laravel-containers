@@ -18,22 +18,27 @@ To build the image of Laravel containers, you need to clone the project.
 
 Clone repository Laravel containers
 
+```
 git clone git@github.com:guicsmts/laravel-containers.git
-
+```
 **Step 2**
 
 Check installation Docker, you can execute the command:
 
+```
 docker -v
-
+````
+```
 For more details you can visit this link:
 https://www.docker.com/
-
+```
 **Step 3**
 
 Build to the image from that command:
 
+```
 docker build -f Dockerfile -t id/laravel-containers:1.0 . 
+````
 
 *Importantly, you need to be in the same directory as the Dockerfile and the dot makes the command.*
 
